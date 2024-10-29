@@ -1,3 +1,4 @@
 Weather App,
 
-Api: Open Weather
+Api: Open Weather/location/news(We will try)
+
