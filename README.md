@@ -1,5 +1,7 @@
-Weather App
-
-Api: Open Weather API, Google Map API, Possible: News Api
-
-Check local weather , have access to world weather (Weather,Temp,Humidity,Air quality etc.) Possible Local news.
+Ordering Software
+-User Registration and Login
+-Restaurant Browsing
+-Menu Display
+-Shopping Cart Function
+-Ordering and Payment
+-Push Notification
