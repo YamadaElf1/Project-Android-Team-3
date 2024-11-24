@@ -32,6 +32,7 @@ public class CartFragment extends Fragment {
     private List<CartItem> cartList;
     private DatabaseReference cartDatabase;
 
+
     private TextView totalItemsView, totalPriceView;
 
     private String userId;
@@ -47,6 +48,7 @@ public class CartFragment extends Fragment {
 
         totalItemsView = view.findViewById(R.id.total_items);
         totalPriceView = view.findViewById(R.id.total_price);
+
 
         cartList = new ArrayList<>();
 
@@ -70,18 +72,30 @@ public class CartFragment extends Fragment {
 
         Button proceedToPaymentButton = view.findViewById(R.id.btnpayment);
         proceedToPaymentButton.setOnClickListener(v -> {
-            // 跳转到 PaymentFragment
-            Fragment paymentFragment = new PaymentFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("userId", userId); // 传递用户 ID 给 PaymentFragment
-            paymentFragment.setArguments(bundle);
+            if (!cartList.isEmpty()) {
+                double totalPrice = 0.0;
 
-            // 替换当前 Fragment
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, paymentFragment)
-                    .addToBackStack(null)
-                    .commit();
+                // 计算总价
+                for (CartItem item : cartList) {
+                    totalPrice += item.getQuantity() * Double.parseDouble(item.getFoodPrice());
+                }
+
+                // 跳转到 PaymentFragment
+                Fragment paymentFragment = new PaymentFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("userId", userId); // 传递用户 ID
+                bundle.putString("totalPrice", String.format("%.2f", totalPrice)); // 传递总价
+                paymentFragment.setArguments(bundle);
+
+                // 替换当前 Fragment
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, paymentFragment)
+                        .addToBackStack(null)
+                        .commit();
+            } else {
+                Toast.makeText(getContext(), "Cart is empty", Toast.LENGTH_SHORT).show();
+            }
         });
         return view;
 

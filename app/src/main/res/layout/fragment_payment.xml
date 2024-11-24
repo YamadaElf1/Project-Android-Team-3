@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaymentFragment">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter amount to pay"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/stripeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Payment Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:textColor="@color/main_style"/>
+        android:text="Pay with Stripe" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/paymentImage"
+        android:layout_width="wrap_content"
+        android:layout_height="328dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/order_img"
+        android:scaleType="centerCrop"
+        android:visibility="gone"/>
+
+</LinearLayout>

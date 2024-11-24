@@ -16,20 +16,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button customerButton = findViewById(R.id.btn_customer);
-        Button restaurantButton = findViewById(R.id.btn_restaurant);
-
-        customerButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Login.class);
-            intent.putExtra("role", "customer");
-            startActivity(intent);
-        });
-
-        restaurantButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Login.class);
-            intent.putExtra("role", "restaurant");
-            startActivity(intent);
-        });
+//        Button customerButton = findViewById(R.id.btn_customer);
+//        Button restaurantButton = findViewById(R.id.btn_restaurant);
+//
+//        customerButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(MainActivity.this, Login.class);
+//            intent.putExtra("role", "customer");
+//            startActivity(intent);
+//        });
+//
+//        restaurantButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(MainActivity.this, Login.class);
+//            intent.putExtra("role", "restaurant");
+//            startActivity(intent);
+//        });
 
     }
 }
