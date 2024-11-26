@@ -3,6 +3,7 @@ package com.example.myfinalproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,8 +57,8 @@ public class CustomerMainActivity extends AppCompatActivity {
                 selectedFragment = new MenuFragment();
             } else if (itemId == R.id.nav_cart) {
                 selectedFragment = new CartFragment();
-            } else if (itemId == R.id.nav_payment) {
-                selectedFragment = new PaymentFragment();
+            } else if (itemId == R.id.nav_orders) {
+                selectedFragment = new OrderFragment();
             } else if (itemId == R.id.nav_about_me) {
                 selectedFragment = new AboutFragment();
             }
@@ -71,17 +72,21 @@ public class CustomerMainActivity extends AppCompatActivity {
     }
 
     private void loadFragment(Fragment fragment) {
-        // 将用户信息传递给 Fragment
-        if (fragment instanceof MenuFragment || fragment instanceof CartFragment) {
-            Bundle bundle = new Bundle();
-            bundle.putString("userName", userName);
-            bundle.putString("userId", userId);
-            fragment.setArguments(bundle);
-        }
+        try {
+            if (fragment instanceof MenuFragment || fragment instanceof CartFragment || fragment instanceof OrderFragment) {
+                Bundle bundle = new Bundle();
+                bundle.putString("userName", userName);
+                bundle.putString("userId", userId);
+                fragment.setArguments(bundle);
+            }
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .commit();
-    }
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error loading fragment: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        }
 }
