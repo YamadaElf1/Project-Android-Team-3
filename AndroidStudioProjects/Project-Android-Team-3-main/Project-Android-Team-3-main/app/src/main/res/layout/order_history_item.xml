@@ -1,0 +1,39 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="8dp">
+
+    <!-- 订单日期 -->
+    <TextView
+        android:id="@+id/tv_order_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Date: YYYY-MM-DD"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <!-- 总金额 -->
+    <TextView
+        android:id="@+id/tv_order_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: $100.00"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <!-- 订单详细项 -->
+    <TextView
+        android:id="@+id/tv_order_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Items will appear here"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>
