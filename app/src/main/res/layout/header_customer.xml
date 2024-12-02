@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="176dp"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/st_background">
+
+    <!-- 用户头像 -->
+    <ImageView
+        android:id="@+id/user_avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/account_2"
+        android:contentDescription="User Avatar"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 用户名 -->
+    <TextView
+        android:id="@+id/header_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <!-- 用户ID -->
+    <TextView
+        android:id="@+id/header_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: "
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+</LinearLayout>
