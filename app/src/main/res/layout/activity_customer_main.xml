@@ -1,8 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F5F5F5">
 
     <!-- Toolbar -->
     <LinearLayout
@@ -10,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="?attr/colorPrimary">
+        android:background="#00BFFF">
 
         <!-- User Name -->
         <TextView
@@ -20,7 +21,7 @@
             android:layout_weight="1"
             android:text="Welcome, User"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <!-- Logout Button -->
@@ -42,15 +43,14 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="#FFFFFF" />
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_menu" />
-
+        app:menu="@menu/bottom_nav_menu"
+        android:background="#FFFFFF" />
 </LinearLayout>
-
-
